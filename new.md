@@ -4,10 +4,18 @@ text
 
 **Bold**
 
+~~Strikethrough~~
+
 # Heading 1
+
 ## Heading 2
+
+### Heading 3
+
 [Week 2 Lab](https://ucsd-cse15l-w22.github.io/week/week2/)
-![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Jelly_cc11.jpg/640px-Jelly_cc11.jpg)
+
+![Jellyfish](https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Jelly_cc11.jpg/640px-Jelly_cc11.jpg)
+
 > Blockquote
 
 * List
