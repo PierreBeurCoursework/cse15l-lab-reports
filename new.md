@@ -12,6 +12,8 @@ text
 
 ### Heading 3
 
+---
+
 [Week 2 Lab](https://ucsd-cse15l-w22.github.io/week/week2/)
 
 ![Jellyfish](https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Jelly_cc11.jpg/640px-Jelly_cc11.jpg)
