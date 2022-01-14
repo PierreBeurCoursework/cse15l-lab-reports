@@ -38,7 +38,7 @@ text
 
 `python calculator` below
 
-```py
+```python
 import operator
 ops = { '+' : operator.add, '-' : operator.sub, '*' : operator.mul,
         '/' : operator.truediv, '^' : operator.pow, '%' : operator.mod }
