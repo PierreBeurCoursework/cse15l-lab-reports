@@ -73,7 +73,7 @@ Running `cat` with a filepath with print the contents of that file. Use `exit`, 
 ## Moving Files with `scp`
 You can copy files from your client to the remote server using the `scp` command. For example, running  
 `scp vscodewindow.png cs15lwi22alj@ieng6.ucsd.edu:~/`  
-and entering your password will copy the `vscodewindow.png` file from the current directory on your client to the home directory ( `~/` ) on the remote server. Running `ssh cs15lwi22alj@ieng6.ucsd.edu "ls"` will list the contents of the home directory on the remote server, and should confirm that the file transfer was successful.
+and entering your password will copy the `vscodewindow.png` file from the current directory on your client to the home directory "`~/`" on the remote server. Running `ssh cs15lwi22alj@ieng6.ucsd.edu "ls"` will list the contents of the home directory on the remote server, and should confirm that the file transfer was successful.
 ```
 PS C:\Users\chuck\Documents\GitHub\cse15l-lab-reports> ssh cs15lwi22alj@ieng6.ucsd.edu "ls -ot"
 Password: 
@@ -101,5 +101,5 @@ To avoid entering your password every time you want to copy a file or log in to 
 After you have completed these steps, you should be able to run `ssh` and `scp` without entering your password. Now, making a change to `WhereAmI.java` on the client, copying it to the remote server, logging in, then compiling and running it remotely only takes about six seconds.
 
 ## Optimizing Remote Running
-You can run a command remotely without even logging in using `ssh cs15lwi22alj@ieng6.ucsd.edu "[cmd]"`, where the `[cmd]` in quotes is the command you want to run. Both on the client and the server, you can combine commands to run them in one line using a semicolon ( `;` ). Using these principles, you can copy, compile, and run a program on the remote server with a single command:  
+You can run a command remotely without even logging in using `ssh cs15lwi22alj@ieng6.ucsd.edu "[cmd]"`, where the `[cmd]` in quotes is the command you want to run. Both on the client and the server, you can combine commands to run them in one line using a semicolon "`;`". Using these principles, you can copy, compile, and run a program on the remote server with a single command:  
 `scp WhereAmI.java cs15lwi22alj@ieng6.ucsd.edu:~/; ssh cs15lwi22alj@ieng6.ucsd.edu "javac WhereAmI.java; java WhereAmI"`
