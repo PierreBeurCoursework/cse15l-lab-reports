@@ -95,7 +95,31 @@ cs15lwi22alj
 Currently, it takes about a dozen seconds if you want to make a change to `WhereAmI.java` locally on the client, copy the file to the remote server with your password, log in and enter your password, compile the program, and run it.
 
 ## Setting an SSH Key
-To avoid entering your password every time you want to copy a file or log in to the remote server, we can use SSH keys. You can generate a pair of public and private keys on the client, then place the public key on the remote server to allow the client to log in without entering a password. The command to generate the keys is `ssh-keygen`. You want to save the key under your user folder under `\.ssh\id_rsa`, and leave the passphrase empty. If you are using Windows, you need to follow [these extra steps](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement#user-key-generation), using PowerShell as an Administrator. To copy the public key to the remote server, you first need to create the `.ssh` directory on the remote server using the command  
+To avoid entering your password every time you want to copy a file or log in to the remote server, we can use SSH keys. You can generate a pair of public and private keys on the client, then place the public key on the remote server to allow the client to log in without entering a password. The command to generate the keys is `ssh-keygen`. You want to save the key under your user folder under `\.ssh\id_rsa`, and leave the passphrase empty.  
+```
+PS C:\Windows\system32> ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (C:\Users\chuck/.ssh/id_rsa): C:\Users\chuck\.ssh\id_rsa
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in id_rsa.
+Your public key has been saved in id_rsa.pub.
+The key fingerprint is:
+SHA256:lI08bb/03LMN0UjpRrnUNBfldErncHh3L0Y6B7M5BC4 chuck@LAPTOP-DHMOH4S5
+The key's randomart image is:
++---[RSA 2048]----+
+|          ..  o+@|
+|       . *  +.o&B|
+|        E =. BB.B|
+|       . + .*=++.|
+|        S   o=*..|
+|           . = o |
+|            . +..|
+|               .+|
+|               ..|
++----[SHA256]-----+
+```
+If you are using Windows, you need to follow [these extra steps](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement#user-key-generation), using PowerShell as an Administrator. To copy the public key to the remote server, you first need to create the `.ssh` directory on the remote server using the command  
 `ssh cs15lwi22alj@ieng6.ucsd.edu "mkdir .ssh"`, then copy they key using  
 `scp /Users/chuck/.ssh/id_rsa.pub cs15lwi22alj@ieng6.ucsd.edu:~/.ssh/authorized_keys`  
 After you have completed these steps, you should be able to run `ssh` and `scp` without entering your password. Now, making a change to `WhereAmI.java` on the client, copying it to the remote server, logging in, then compiling and running it remotely only takes about six seconds.
@@ -103,3 +127,11 @@ After you have completed these steps, you should be able to run `ssh` and `scp` 
 ## Optimizing Remote Running
 You can run a command remotely without even logging in using `ssh cs15lwi22alj@ieng6.ucsd.edu "[cmd]"`, where the `[cmd]` in quotes is the command you want to run. Both on the client and the server, you can combine commands to run them in one line using a semicolon "`;`". Using these principles, you can copy, compile, and run a program on the remote server with a single command:  
 `scp WhereAmI.java cs15lwi22alj@ieng6.ucsd.edu:~/; ssh cs15lwi22alj@ieng6.ucsd.edu "javac WhereAmI.java; java WhereAmI"`
+```
+PS C:\Users\chuck\Documents\GitHub\cse15l-lab-reports> scp WhereAmI.java cs15lwi22alj@ieng6.ucsd.edu:~/; ssh cs15lwi22alj@ieng6.ucsd.edu "javac WhereAmI.java; java WhereAmI"
+WhereAmI.java                                     100%   26KB 303.1KB/s   00:00
+Linux
+cs15lwi22alj
+/home/linux/ieng6/cs15lwi22/cs15lwi22alj
+/home/linux/ieng6/cs15lwi22/cs15lwi22alj
+```
