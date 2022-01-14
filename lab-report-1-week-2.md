@@ -101,5 +101,5 @@ To avoid entering your password every time you want to copy a file or log in to 
 After you have completed these steps, you should be able to run `ssh` and `scp` without entering your password. Now, making a change to `WhereAmI.java` on the client, copying it to the remote server, logging in, then compiling and running it remotely only takes about six seconds.
 
 ## Optimizing Remote Running
-You can run a command remotely without even logging in using `ssh cs15lwi22alj@ieng6.ucsd.edu "[cmd]"`, where the `[cmd]` in quotes is the command you want to run. Both on the client and the server, you can combine commands to run them in one line using a semicolon ( `;` ). Using these principles, you can copy, compile, and run a program on the remote server with a single command:
+You can run a command remotely without even logging in using `ssh cs15lwi22alj@ieng6.ucsd.edu "[cmd]"`, where the `[cmd]` in quotes is the command you want to run. Both on the client and the server, you can combine commands to run them in one line using a semicolon ( `;` ). Using these principles, you can copy, compile, and run a program on the remote server with a single command:  
 `scp WhereAmI.java cs15lwi22alj@ieng6.ucsd.edu:~/; ssh cs15lwi22alj@ieng6.ucsd.edu "javac WhereAmI.java; java WhereAmI"`
