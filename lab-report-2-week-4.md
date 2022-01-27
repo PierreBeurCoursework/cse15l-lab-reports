@@ -2,7 +2,7 @@
 
 ## Code Change 1: Syntax
 ![code change diff from GitHub](diff-1.png)
-[Failure-inducing input 1](breaking-test-file.md)
+[Failure-inducing input 1](https://pierrebeur.github.io/cse15l-lab-reports/breaking-test-file.md)
 ```
 java MarkdownParse breaking-test-file.md
 [but not really, https://www.google.com]
@@ -11,7 +11,7 @@ A failure inducing input for the previous version of the program is any file tha
 
 ## Code Change 2: Spaces
 ![code change diff from GitHub](diff-2.png)
-[Failure-inducing input 2](spaces-test-file.md)
+[Failure-inducing input 2](https://pierrebeur.github.io/cse15l-lab-reports/spaces-test-file.md)
 ```
 java MarkdownParse spaces-test-file.md
 [a link with spaces, nospaces.com]
@@ -20,7 +20,7 @@ A failure inducing input for the previous version of the program is any file tha
 
 ## Code Change 3: Images
 ![code change diff from GitHub](diff-3.png)
-[Failure-inducing input 3](image-test-file.md)  
+[Failure-inducing input 3](https://pierrebeur.github.io/cse15l-lab-reports/image-test-file.md)  
 ```
 java MarkdownParse image-test-file.md
 [page.com, ucsd.edu]
