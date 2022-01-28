@@ -135,3 +135,4 @@ cs15lwi22alj
 /home/linux/ieng6/cs15lwi22/cs15lwi22alj
 /home/linux/ieng6/cs15lwi22/cs15lwi22alj
 ```
+Assuming that this command is already in your terminal's history (you have already run this command), copying, compiling, and running the program on the remote server can be done with two keystrokes: first pressing the up key to recall the previously run command, then the enter key to run it. Compared to running each of these commands separately, which would require two keystrokes per command, or eight keystrokes total, these methods of combining commands using a semicolon and running commands remotely without accessing a remote terminal can save a lot of time, especially when you are making and testing changes to your program frequently.
