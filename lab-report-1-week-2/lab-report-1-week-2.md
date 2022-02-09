@@ -11,7 +11,7 @@ The following steps will be covered:
 ## Installing VS Code
 Doing this consists of visiting [code.visualstudio.com](https://code.visualstudio.com/) and following the instructions to download and install it on your device. Once it is installed and you open VS Code, you should see a window that looks like this:
 
-![VS Code](vscodewindow.png)
+![VS Code](./vscodewindow.png)
 
 ## Remotely Connecting
 The first step to connecting to your course-specific account for 15L if you are using Windows is to [install OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse). Make sure you run PowerShell as an Administrator for the commands to work correctly. To setup your course-specific account, visit [sdacs.ucsd.edu/~icc](https://sdacs.ucsd.edu/~icc/index.php) and set your password. Your username will start with `cs15lwi22` followed by three letters unique to your account. To connect to the remote server, run this command in any terminal, with the `###` replaced by your unique letters: `ssh cs15lwi22###@ieng6.ucsd.edu`  
