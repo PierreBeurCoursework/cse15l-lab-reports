@@ -1,3 +1,4 @@
+```md
 # This test file will break the code
 
 Sometimes I want to create some mayhem.
@@ -7,3 +8,4 @@ So lets take a look at this matrix: `[a b c d]` which is very trivial
 [Hello World](https://www.google.com)
 
 There's More.
+```
