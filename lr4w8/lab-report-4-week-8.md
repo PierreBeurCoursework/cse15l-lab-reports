@@ -19,11 +19,31 @@ public void testSnippet1() {
 }
 ```
 
-For your implementation, the corresponding output when running the tests; if it passed, say so. If it didn’t pass, show the specific part of the JUnit output that shows the test failure.
+The JUnit output shows that the test failed when running the tests for my implementation:
 
-For the implementation you reviewed, the corresponding output when running the tests; if it passed, say so. If it didn’t pass, show the specific part of the JUnit output that shows the test failure.
+```
+1) testSnippet1(MarkdownParseTest)
+java.lang.AssertionError: expected:<[`google.com, google.com, ucsd.edu]> but was:<[url.com, `google.com, google.com, ucsd.edu]>
+        at org.junit.Assert.fail(Assert.java:89)
+        at org.junit.Assert.failNotEquals(Assert.java:835)
+        at org.junit.Assert.assertEquals(Assert.java:120)
+        at org.junit.Assert.assertEquals(Assert.java:146)
+        at MarkdownParseTest.testSnippet1(MarkdownParseTest.java:28)
+```
 
-Do you think there is a small (<10 lines) code change that will make your program work for snippet 1 and all related cases that use inline code with backticks? If yes, describe the code change. If not, describe why it would be a more involved change.
+The JUnit output shows that the test failed when running the tests for the implementation I reviewed:
+
+```
+1) testSnippet1(MarkdownParseTest)
+java.lang.AssertionError: expected:<[`google.com, google.com, ucsd.edu]> but was:<[url.com, `google.com, google.com, ucsd.edu]>
+        at org.junit.Assert.fail(Assert.java:89)
+        at org.junit.Assert.failNotEquals(Assert.java:835)
+        at org.junit.Assert.assertEquals(Assert.java:120)
+        at org.junit.Assert.assertEquals(Assert.java:146)
+        at MarkdownParseTest.testSnippet1(MarkdownParseTest.java:21)
+```
+
+A small code change that would make my program work for snippet 1 and all related cases that use inline code with backticks would be to disregard otherwise valid links whose opening bracket is within a region encapsulated by backticks.
 
 ## Snippet 2
 
@@ -40,11 +60,21 @@ public void testSnippet2() {
 }
 ```
 
-For your implementation, the corresponding output when running the tests; if it passed, say so. If it didn’t pass, show the specific part of the JUnit output that shows the test failure.
+The JUnit output shows that the test failed when running the tests for my implementation:
 
-For the implementation you reviewed, the corresponding output when running the tests; if it passed, say so. If it didn’t pass, show the specific part of the JUnit output that shows the test failure.
+```
+2) testSnippet2(MarkdownParseTest)
+java.lang.AssertionError: expected:<[a.com, a.com(()), example.com]> but was:<[a.com, a.com((, example.com]>
+        at org.junit.Assert.fail(Assert.java:89)
+        at org.junit.Assert.failNotEquals(Assert.java:835)
+        at org.junit.Assert.assertEquals(Assert.java:120)
+        at org.junit.Assert.assertEquals(Assert.java:146)
+        at MarkdownParseTest.testSnippet2(MarkdownParseTest.java:39)
+```
 
-Do you think there is a small (<10 lines) code change that will make your program work for snippet 2 and all related cases that nest parentheses, brackets, and escaped brackets? If yes, describe the code change. If not, describe why it would be a more involved change.
+The test passed when running the tests for the implementation I reviewed.
+
+A small code change that would make my program work for snippet 2 and all related cases that nest parentheses, brackets, and escaped brackets would be to add a method which loops with a stack to find a matching closing character given the index of an opening character.
 
 ## Snippet 3
 
@@ -72,8 +102,28 @@ public void testSnippet3() {
 }
 ```
 
-For your implementation, the corresponding output when running the tests; if it passed, say so. If it didn’t pass, show the specific part of the JUnit output that shows the test failure.
+The JUnit output shows that the test failed when running the tests for my implementation:
 
-For the implementation you reviewed, the corresponding output when running the tests; if it passed, say so. If it didn’t pass, show the specific part of the JUnit output that shows the test failure.
+```
+3) testSnippet3(MarkdownParseTest)
+java.lang.AssertionError: expected:<[https://ucsd-cse15l-w22.github.io/]> but was:<[https://www.twitter.com, https://ucsd-cse15l-w22.github.io/]>
+        at org.junit.Assert.fail(Assert.java:89)
+        at org.junit.Assert.failNotEquals(Assert.java:835)
+        at org.junit.Assert.assertEquals(Assert.java:120)
+        at org.junit.Assert.assertEquals(Assert.java:146)
+        at MarkdownParseTest.testSnippet3(MarkdownParseTest.java:61)
+```
 
-Do you think there is a small (<10 lines) code change that will make your program work for snippet 3 and all related cases that have newlines in brackets and parentheses? If yes, describe the code change. If not, describe why it would be a more involved change.
+The JUnit output shows that the test failed when running the tests for the implementation I reviewed:
+
+```
+2) testSnippet3(MarkdownParseTest)
+java.lang.StringIndexOutOfBoundsException: String index out of range: 452
+        at java.base/java.lang.StringLatin1.charAt(StringLatin1.java:48)
+        at java.base/java.lang.String.charAt(String.java:711)
+        at MarkdownParse.findCloseParen(MarkdownParse.java:14)
+        at MarkdownParse.getLinks(MarkdownParse.java:36)
+        at MarkdownParseTest.testSnippet3(MarkdownParseTest.java:37)
+```
+
+A small code change that would make my program work for snippet 3 and all related cases that have newlines in brackets and parentheses would be to disregard links which have newline characters in brackets.
