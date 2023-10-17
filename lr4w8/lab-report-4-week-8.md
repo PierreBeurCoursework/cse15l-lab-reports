@@ -1,6 +1,6 @@
 # Lab Report 4 Week 8
 
-For each snippet, a test was added both to [my implementation](https://github.com/PierreBeur/markdown-parse) of markdown-parse, and [the implementation I reviewed](https://github.com/ucsd-cse15l-w22/markdown-parse). What each test should produce was decided by using the VScode preview.
+For each snippet, a test was added both to my implementation of markdown-parse, and [the implementation I reviewed](https://github.com/ucsd-cse15l-w22/markdown-parse). What each test should produce was decided by using the VScode preview.
 
 
 ## Snippet 1

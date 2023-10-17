@@ -1,6 +1,6 @@
 # Lab Report 5 Week 10
 
-In this report, the implementations of markdown-parse in [my repository](https://github.com/PierreBeur/markdown-parse) and the [provided repository](https://github.com/ucsd-cse15l-w22/markdown-parse) were compared using the tests provided from the commonmark-spec. The tests with different results were found programmatically by adding a method to and modifying the main method of each implementation.
+In this report, the implementations of markdown-parse in my repository and the [provided repository](https://github.com/ucsd-cse15l-w22/markdown-parse) were compared using the tests provided from the commonmark-spec. The tests with different results were found programmatically by adding a method to and modifying the main method of each implementation.
 
 ```java
 public static void printLinks(File file) throws IOException {
